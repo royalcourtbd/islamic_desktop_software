@@ -4,8 +4,8 @@ import 'package:islamic_desktop_software/core/fontfamily/font_family.dart';
 import 'package:islamic_desktop_software/core/util/desktop_screen.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-
 final ThemeData lightTheme = ThemeData(
+  
   useMaterial3: true,
   fontFamily: FontFamily.poppins,
   brightness: Brightness.light,
@@ -20,6 +20,7 @@ final ThemeData lightTheme = ThemeData(
     ),
     elevation: 0,
   ),
+ 
   buttonTheme: const ButtonThemeData(
     padding: EdgeInsets.only(left: 16, right: 16),
     shape: RoundedRectangleBorder(
@@ -47,7 +48,7 @@ final ThemeData lightTheme = ThemeData(
     ),
   ),
   dividerTheme: const DividerThemeData(
-    color: DesktopAppColors.backgroundColor,
+    color: Color(0xffEAECF0),
     thickness: 1,
   ),
   textTheme: TextTheme(

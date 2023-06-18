@@ -103,6 +103,9 @@ flutter:
           weight: 400
         - asset: assets/fonts/roboto/Roboto-Medium.ttf
           weight: 500
+    - family: SurahName
+      fonts:
+        - asset: assets/fonts/sura_names.ttf
 
   #
   # For details regarding fonts from package dependencies,

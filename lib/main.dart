@@ -15,7 +15,7 @@ Future<void> _initialiseServices() async {
 
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
     setWindowTitle('Islamic Desktop Software');
-    setWindowMinSize(const Size(800, 500));
+    setWindowMinSize(const Size(800, 550));
     setWindowMaxSize(Size.infinite);
   }
 }

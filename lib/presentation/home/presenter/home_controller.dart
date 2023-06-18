@@ -1,6 +1,5 @@
 import 'dart:developer';
 import 'dart:ui';
-
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
@@ -54,7 +53,7 @@ class HomeController extends GetxController {
   }
 
   double get zeroTwoPercentWidth {
-    const double zeroTwoPercent = 0.02;
+    const double zeroTwoPercent = 0.01;
     final double boxWidth =
         width.value >= 1600 ? 37 : (width.value * zeroTwoPercent);
     return boxWidth;

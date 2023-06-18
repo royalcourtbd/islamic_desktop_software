@@ -24,17 +24,18 @@ class DesktopAppColors {
   static const Color lightCardColor = Color(0xffffffff);
 
   //titleColor
-  static const Color titleColor = Color(0xff3D4953);
-  //noldTitleColor
+  static const Color titleColor = Color(0xff2D373E);
+
+  //subTitleColor
+  static const Color subTitleColor = Color(0xff6D7B81);
+
+  //boldTitleColor
   static const Color boldTitleColor = Color(0xff2D373E);
   //Search Text Color
   static const Color searchTextColor = Color(0xff6D7B81);
 
   //Dark Title Color
   static const Color darkTitleColor = Color(0xffC6C3CA);
-
-  //subTitleColor
-  static const Color subTitleColor = Color(0xff6F767D);
 
   //darkSubTitleColor
   static const Color darkSubTitleColor = Color(0xffB3B3B3);

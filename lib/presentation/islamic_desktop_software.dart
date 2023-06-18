@@ -9,8 +9,9 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 
 class IslamicDesktopSoftware extends StatelessWidget {
   const IslamicDesktopSoftware({super.key});
+  
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     _setUpStatusBarColor();

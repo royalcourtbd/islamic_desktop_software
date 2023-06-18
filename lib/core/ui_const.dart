@@ -24,25 +24,36 @@ class TextUtils {
       fontFamily: FontFamily.roboto,
       fontWeight: FontWeight.w400,
       color: DesktopAppColors.searchTextColor,
-      fontSize: _homeController.zeroTwoPercentWidth,
+      fontSize: 14.px,
     );
   }
 
-  static TextStyle bodyTitleText({
-    Color? color,
-    double? height,
-    double? fontSize,
-  }) {
+  static TextStyle bodyTitleText(
+      {Color? color, double? fontSize, FontWeight? fontWeight}) {
     return TextStyle(
       fontFamily: FontFamily.poppins,
+      fontWeight: fontWeight ?? FontWeight.w500,
+      color: color ?? DesktopAppColors.titleColor,
+      fontSize: fontSize ?? 14.px,
+    );
+  }
+
+  static TextStyle bodySubtitleText(
+      {Color? color, double? fontSize, String? fontFamily}) {
+    return TextStyle(
+      fontFamily: fontFamily ?? FontFamily.roboto,
+      fontWeight: FontWeight.w400,
+      color: color ?? DesktopAppColors.subTitleColor,
+      fontSize: fontSize ?? 14.px,
+    );
+  }
+
+  static TextStyle mediumText({Color? color}) {
+    return TextStyle(
+      fontFamily: FontFamily.roboto,
       fontWeight: FontWeight.w600,
-      height: height ?? 0,
-      color: color ??
-          (Get.isDarkMode
-              ? DesktopAppColors.darkTitleColor
-              : DesktopAppColors.titleColor),
-      fontSize:
-          DesktopScreen.isMobile ? fontSize ?? 14.px : (fontSize ?? 14) + 10.px,
+      color: color ?? DesktopAppColors.titleColor,
+      fontSize: 14.px,
     );
   }
 
@@ -76,25 +87,6 @@ class TextUtils {
       fontSize: DesktopScreen.isMobile
           ? fontSizeMobile ?? 12.px
           : fontSizeTab ?? 22.px,
-    );
-  }
-
-  static TextStyle bodySubtitleText(
-      {Color? color,
-      FontWeight? fontWeight,
-      double? fontSize,
-      double? height}) {
-    return TextStyle(
-      fontFamily: FontFamily.roboto,
-      fontWeight: fontWeight ?? FontWeight.w500,
-      height: height ?? 1,
-      color: color ??
-          (Get.isDarkMode
-              ? DesktopAppColors.darkTitleColor
-              : DesktopAppColors.titleColor),
-      fontSize: DesktopScreen.isMobile
-          ? fontSize ?? 12.px
-          : (fontSize ?? 12.px) + 10.px,
     );
   }
 
@@ -260,8 +252,8 @@ final paddingB10 = EdgeInsets.only(
   bottom: DesktopScreen.isMobile ? 10.px : 20.px,
 );
 
-final double kPadding15 = DesktopScreen.isMobile ? 15.px : 30.px;
-final double kPadding20 = DesktopScreen.isMobile ? 20.px : 30.px;
+final double kPadding15 = 15.px;
+final double kPadding20 = 20.px;
 final double kPadding22 = DesktopScreen.isMobile ? 22.px : 32.px;
 final paddingT15L15R15 =
     EdgeInsets.only(top: kPadding15, left: kPadding15, right: kPadding15);
@@ -323,12 +315,12 @@ final gapH2 = SizedBox(height: DesktopScreen.isMobile ? 2.px : 4.px);
 final gapH4 = SizedBox(height: DesktopScreen.isMobile ? 4.px : 6.px);
 final gapH6 = SizedBox(height: DesktopScreen.isMobile ? 6.px : 10.px);
 final gapH8 = SizedBox(height: DesktopScreen.isMobile ? 8.px : 10.px);
-final gapH10 = SizedBox(height: DesktopScreen.isMobile ? 10.px : 18.px);
+final gapH10 = SizedBox(height: 10.px);
 final gapH12 = SizedBox(height: DesktopScreen.isMobile ? 12.px : 20.px);
 final gapH14 = SizedBox(height: DesktopScreen.isMobile ? 14.px : 24.px);
 final gapH16 = SizedBox(height: DesktopScreen.isMobile ? 16.px : 26.px);
 final gapH18 = SizedBox(height: 18.px);
-final gapH20 = SizedBox(height: DesktopScreen.isMobile ? 20.px : 26.px);
+final gapH20 = SizedBox(height: 20.px);
 final gapH22 = SizedBox(height: 22.px);
 final gapH24 = SizedBox(height: 24.px);
 final gapH26 = SizedBox(height: 26.px);
@@ -338,8 +330,7 @@ final gapH32 = SizedBox(height: DesktopScreen.isMobile ? 32.px : 42.px);
 final gapW4 = SizedBox(width: 4.px);
 final gapW6 = SizedBox(width: 6.px);
 final gapW8 = SizedBox(width: DesktopScreen.isMobile ? 8.px : 14.px);
-final gapW10 =
-    SizedBox(width: DesktopScreen.isMobile ? 10.px : DesktopScreen.width / 4.5);
+final gapW10 = SizedBox(width: 10.px);
 final gapW12 = SizedBox(width: DesktopScreen.isMobile ? 12.px : 18.px);
 final gapW14 = SizedBox(width: DesktopScreen.isMobile ? 14.px : 22.px);
 final gapW16 = SizedBox(width: 16.px);
