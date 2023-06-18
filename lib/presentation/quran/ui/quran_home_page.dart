@@ -47,19 +47,97 @@ class QuranHomePage extends StatelessWidget {
                             color: DesktopAppColors.backgroundColor,
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: SingleChildScrollView(
-                            child: Column(children: [
-                              ListView.builder(
-                                shrinkWrap: true,
-                                physics: const BouncingScrollPhysics(),
-                                itemCount: 114,
-                                itemBuilder: (context, index) {
-                                  return ListTile(
-                                    title: Text('Surah ${index + 1}'),
-                                  );
-                                },
-                              )
-                            ]),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.only(left: 24, top: 24),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: DesktopAppColors.backgroundColor,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        CardContainer(
+                                          horizontalMargin: 0,
+                                          padding: EdgeInsets.zero,
+                                          child: Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.end,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 24,
+                                                    top: 24,
+                                                    bottom: 24),
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'Al-Fatiha',
+                                                      style: TextUtils
+                                                          .bodyTitleText(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              fontSize: 26.px),
+                                                    ),
+                                                    gapH4,
+                                                    Text(
+                                                      'The Opening | Meccan',
+                                                      style: TextUtils
+                                                          .bodySubtitleText(),
+                                                    ),
+                                                    gapH2,
+                                                    Text(
+                                                      'Ayahs : 7',
+                                                      style: TextUtils
+                                                          .bodySubtitleText(),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Image.asset(
+                                                SvgPath.imgPlayButton,
+                                                width: 100.px,
+                                                height: 30.px,
+                                              ),
+                                              ClipRRect(
+                                                borderRadius: BorderRadius.only(
+                                                    bottomRight:
+                                                        Radius.circular(
+                                                  kRadius14,
+                                                )),
+                                                child: Image.asset(
+                                                  SvgPath.imgMakka,
+                                                  height: 100.px,
+                                                  width: 170.px,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(24),
+                                child: Container(
+                                  width: 300,
+                                  decoration: BoxDecoration(
+                                    color: DesktopAppColors.whiteColor,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),

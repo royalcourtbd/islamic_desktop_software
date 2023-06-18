@@ -12,4 +12,6 @@ class SvgPath {
   static const String icHome = 'assets/icons/home.svg';
   static const String icPlane = 'assets/icons/plane.svg';
   static const String icProfileImage = 'assets/images/ptofile_image.png';
+  static const String imgMakka = 'assets/images/makka.png';
+  static const String imgPlayButton = 'assets/images/play_button.png';
 }
