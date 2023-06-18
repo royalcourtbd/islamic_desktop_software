@@ -15,6 +15,15 @@ class TextUtils {
       fontFamily: FontFamily.roboto,
       fontWeight: FontWeight.w700,
       color: color ?? DesktopAppColors.boldTitleColor,
+      fontSize: _homeController.isFullScreen ? 32.px : 26.px,
+    );
+  }
+
+  static TextStyle searchBoxText() {
+    return TextStyle(
+      fontFamily: FontFamily.roboto,
+      fontWeight: FontWeight.w400,
+      color: DesktopAppColors.searchTextColor,
       fontSize: _homeController.zeroTwoPercentWidth,
     );
   }
@@ -52,45 +61,6 @@ class TextUtils {
               ? DesktopAppColors.darkTitleColor
               : DesktopAppColors.titleColor),
       fontSize: DesktopScreen.isMobile ? fontSize ?? 14.px : 24.px,
-    );
-  }
-
-  static TextStyle banglaTitleText({Color? color, double? fontSize}) {
-    return TextStyle(
-      fontFamily: FontFamily.poppins,
-      fontWeight: FontWeight.w700,
-      color: color ??
-          (Get.isDarkMode
-              ? DesktopAppColors.darkTitleColor
-              : DesktopAppColors.titleColor),
-      fontSize: DesktopScreen.isMobile ? fontSize ?? 18.px : 28.px,
-    );
-  }
-
-  static TextStyle banglaBodyText(
-      {Color? color, double? fontSize, double? tabFontSize}) {
-    return TextStyle(
-      fontFamily: FontFamily.poppins,
-      fontWeight: FontWeight.w600,
-      color: color ??
-          (Get.isDarkMode
-              ? DesktopAppColors.darkTitleColor
-              : DesktopAppColors.titleColor),
-      fontSize:
-          DesktopScreen.isMobile ? fontSize ?? 15.px : tabFontSize ?? 25.px,
-    );
-  }
-
-  static TextStyle banglaSubTitleText({Color? color, double? fontSize}) {
-    return TextStyle(
-      fontFamily: FontFamily.poppins,
-      fontWeight: FontWeight.w400,
-      height: 1.7,
-      color: color ??
-          (Get.isDarkMode
-              ? DesktopAppColors.darkTitleColor
-              : DesktopAppColors.titleColor),
-      fontSize: DesktopScreen.isMobile ? fontSize ?? 15.px : 23.px,
     );
   }
 
@@ -235,76 +205,6 @@ class TextUtils {
       fontSize: DesktopScreen.isMobile ? 12.px : 20.px,
     );
   }
-
-  static TextStyle shahadahText() {
-    return TextStyle(
-      wordSpacing: 2,
-      height: 1.3,
-      fontFamily: FontFamily.roboto,
-      fontWeight: FontWeight.w600,
-      color: DesktopAppColors.whiteColor,
-      fontSize: DesktopScreen.isMobile ? 12.px : 20.px,
-      fontStyle: FontStyle.italic,
-    );
-  }
-
-  static TextStyle largeText({Color? color, double? fontSize}) {
-    return TextStyle(
-      fontFamily: FontFamily.roboto,
-      fontWeight: FontWeight.w700,
-      color: color ??
-          (Get.isDarkMode
-              ? DesktopAppColors.darkTitleColor
-              : DesktopAppColors.titleColor),
-      fontSize: DesktopScreen.isMobile ? fontSize ?? 16.px : 24.px,
-    );
-  }
-
-  static TextStyle titleLargeText(bool textColor) {
-    return TextStyle(
-      fontFamily: FontFamily.roboto,
-      fontWeight: textColor ? FontWeight.w800 : FontWeight.w600,
-      color: textColor
-          ? DesktopAppColors.primaryColor
-          : Get.isDarkMode
-              ? DesktopAppColors.darkTextColro
-              : DesktopAppColors.titleColor,
-      fontSize: DesktopScreen.isMobile ? 16.px : 26.px,
-    );
-  }
-
-  static TextStyle arabicText({String? fontFamily, double? fontSize}) {
-    return TextStyle(
-      fontFamily: fontFamily ?? FontFamily.meQuran,
-      fontWeight: FontWeight.w400,
-      color: Get.isDarkMode
-          ? DesktopAppColors.darkTitleColor
-          : DesktopAppColors.titleColor,
-      fontSize: DesktopScreen.isMobile ? fontSize ?? 22.px : 36.px,
-      height: 2.px,
-      //height: 1.7.px,
-    );
-  }
-
-  static TextStyle translationText() {
-    return TextStyle(
-      fontFamily: FontFamily.poppins,
-      fontWeight: FontWeight.w600,
-      color: DesktopAppColors.primaryColor,
-      fontSize: DesktopScreen.isMobile ? 12.px : 20.px,
-    );
-  }
-
-  static TextStyle drawerText({
-    Color? color,
-  }) {
-    return TextStyle(
-      fontFamily: FontFamily.poppins,
-      fontWeight: FontWeight.w500,
-      color: color ?? DesktopAppColors.whiteColor,
-      fontSize: DesktopScreen.isMobile ? 14.px : 22.px,
-    );
-  }
 }
 
 //////////Horizintal padding////////////////////
@@ -395,7 +295,7 @@ final paddingL15 =
 final paddingAll1 = EdgeInsets.all(DesktopScreen.isMobile ? 1.5.px : 3.px);
 final paddingAll6 = EdgeInsets.all(DesktopScreen.isMobile ? 6.px : 12.px);
 final paddingAll8 = EdgeInsets.all(DesktopScreen.isMobile ? 8.px : 12.px);
-final paddingAll10 = EdgeInsets.all(DesktopScreen.isMobile ? 10.px : 20.px);
+final paddingAll10 = EdgeInsets.all(kPadding10);
 final paddingAll14 = EdgeInsets.all(DesktopScreen.isMobile ? 14.px : 26.px);
 final paddingAll15 = EdgeInsets.all(kPadding15);
 final paddingAll20 = EdgeInsets.all(kPadding20);
@@ -463,7 +363,7 @@ final double kPadding2 = DesktopScreen.isMobile ? 2.px : 4.px;
 final double kPadding4 = DesktopScreen.isMobile ? 4.px : 8.px;
 final double kPadding6 = DesktopScreen.isMobile ? 6.px : 12.px;
 final double kPadding8 = DesktopScreen.isMobile ? 8.px : 12.px;
-final double kPadding10 = DesktopScreen.isMobile ? 10.px : 20.px;
+final double kPadding10 = 10.px;
 final double kPadding12 = DesktopScreen.isMobile ? 12.px : 22.px;
 final double kPadding14 = DesktopScreen.isMobile ? 14.px : 28.px;
 final double kPadding16 = DesktopScreen.isMobile ? 16.px : 28.px;
@@ -485,7 +385,7 @@ final BorderRadiusGeometry radius4 =
 final BorderRadiusGeometry radius6 =
     BorderRadius.circular(DesktopScreen.isMobile ? 6.px : 14.px);
 final double kRadius8 = DesktopScreen.isMobile ? 8.px : 16.px;
-final double kRadius10 = DesktopScreen.isMobile ? 10.px : 20.px;
+final double kRadius10 = 10.px;
 final double kRadius12 = 12.px;
 final double kRadius14 = 14.px;
 final double kRadius16 = DesktopScreen.isMobile ? 16.px : 24;

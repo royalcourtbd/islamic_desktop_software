@@ -4,14 +4,13 @@ import 'package:islamic_desktop_software/core/assets/svg_path.dart';
 import 'package:islamic_desktop_software/core/config/pro_colors.dart';
 import 'package:islamic_desktop_software/core/ui_const.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:islamic_desktop_software/presentation/quran/presenter/quran_home_controller.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../home/presenter/home_controller.dart';
 
 class QuranHomePage extends StatelessWidget {
   QuranHomePage({super.key});
-  final QuranHomeController _quranHomeController =
-      Get.put(QuranHomeController());
+
   final HomeController _homeController = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
@@ -34,27 +33,42 @@ class QuranHomePage extends StatelessWidget {
             flex: 1,
             child: Container(
               color: Colors.white,
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.symmetric(horizontal: 20.px, vertical: 20.px),
               child: Column(
                 children: [
                   SizedBox(
                     width: double.infinity,
-                    height: 70,
-                    //color: const Color.fromARGB(255, 18, 248, 79),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
                           children: [
-                            Image.asset(
-                              SvgPath.icQuranApp,
-                              width: 40,
-                              height: 40,
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(kRadius10),
+                                border: Border.all(
+                                  color: Theme.of(context).primaryColor,
+                                  width: 2.px,
+                                ),
+                              ),
+                              child: Image.asset(
+                                SvgPath.icQuranApp,
+                                width: 50,
+                                height: 50,
+                              ),
                             ),
                             gapW14,
-                            Text(
-                              'Quran Mazid',
-                              style: TextUtils.boldText(),
+                            _homeController.width.value <= 800
+                                ? SizedBox.fromSize()
+                                : Text(
+                                    'Quran Mazid'.tr,
+                                    style: TextUtils.boldText(),
+                                  ),
+                            _homeController.width.value <= 800
+                                ? const SizedBox.shrink()
+                                : gapW14,
+                            SvgPicture.asset(
+                              SvgPath.icArrowDown,
                             ),
                           ],
                         ),
@@ -62,28 +76,36 @@ class QuranHomePage extends StatelessWidget {
                           decoration: BoxDecoration(
                             border: Border.all(
                               color: const Color(0xffE1E5ED),
+                              width: 2.px,
                             ),
                             borderRadius: BorderRadius.circular(7),
                           ),
-                          width: 470,
+                          width: _homeController.searchBoxWidth,
                           child: TextField(
                             decoration: InputDecoration(
                               fillColor: const Color(0xffF3F5F9),
-                              prefixIcon: SvgPicture.asset(
-                                SvgPath.icSearch,
+                              prefixIcon: Padding(
+                                padding: const EdgeInsets.all(4),
+                                child: SvgPicture.asset(
+                                  SvgPath.icSearch,
+                                ),
                               ),
-                              suffixIcon: SvgPicture.asset(
-                                SvgPath.icFilter,
+                              suffixIcon: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: SvgPicture.asset(
+                                  SvgPath.icFilter,
+                                ),
                               ),
                               filled: true,
-                              contentPadding:
-                                  const EdgeInsets.only(left: 20, right: 20),
                               errorBorder: InputBorder.none,
                               enabledBorder: InputBorder.none,
                               focusedBorder: InputBorder.none,
                               disabledBorder: InputBorder.none,
                               border: InputBorder.none,
-                              hintText: 'Search Sura, Juz, Para, Page',
+                              hintText: 'Search Sura, Juz, Para, Page'.tr,
+                              hintStyle: TextStyle(
+                                fontSize: 12.px,
+                              ),
                             ),
                           ),
                         ),
@@ -91,25 +113,52 @@ class QuranHomePage extends StatelessWidget {
                           children: [
                             SvgPicture.asset(
                               SvgPath.icSettings,
-                              height: 50,
+                              height: 38.px,
                             ),
+                            gapW30,
                             Container(
-                              height: 50,
-                              width: 150,
-                              color: Theme.of(context).primaryColor,
+                              padding: paddingAll10,
+                              height: 48.px,
+                              width: _homeController.fullScreen,
+                              decoration: BoxDecoration(
+                                color: Theme.of(context).primaryColor,
+                                borderRadius: BorderRadius.circular(10.px),
+                              ),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  _homeController.isFullScreen
+                                      ? const Text(
+                                          'Support Us',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        )
+                                      : const SizedBox.shrink(),
+                                  SvgPicture.asset(
+                                    SvgPath.icSupport,
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         )
                       ],
                     ),
                   ),
-                  Row(children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      color: DesktopAppColors.backgroundColor,
-                    ),
-                  ]),
+                  Row(
+                    children: [
+                      Container(
+                        height: 100,
+                        width: 100,
+                        color: DesktopAppColors.backgroundColor,
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

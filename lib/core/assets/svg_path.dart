@@ -6,4 +6,5 @@ class SvgPath {
   static const String icFilter = 'assets/icons/ic_filter.svg';
   static const String icSearch = 'assets/icons/ic_search.svg';
   static const String icSupport = 'assets/icons/ic_support_us.svg';
+  static const String icArrowDown = 'assets/icons/ic_arrow_down.svg';
 }

@@ -23,12 +23,15 @@ class QuranHomeController extends GetxController {
     return boxWidth;
   }
 
+ 
+
   double get onePercentWidth {
     const double onePercent = 0.1;
     final double boxWidth =
         width.value >= 1600 ? 160 : (width.value * onePercent);
     return boxWidth;
   }
+
   double get zeroTwoPercentWidth {
     const double zeroTwoPercent = 0.02;
     final double boxWidth =

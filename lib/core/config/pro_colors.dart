@@ -25,8 +25,10 @@ class DesktopAppColors {
 
   //titleColor
   static const Color titleColor = Color(0xff3D4953);
-  //titleColor
+  //noldTitleColor
   static const Color boldTitleColor = Color(0xff2D373E);
+  //Search Text Color
+  static const Color searchTextColor = Color(0xff6D7B81);
 
   //Dark Title Color
   static const Color darkTitleColor = Color(0xffC6C3CA);
