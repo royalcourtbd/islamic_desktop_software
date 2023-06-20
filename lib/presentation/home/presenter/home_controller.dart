@@ -22,15 +22,7 @@ class HomeController extends GetxController {
     return boxWidth;
   }
 
-  double get searchBoxWidth {
-    const double twoPercent = .3;
-    final double boxWidth = width.value >= 1920
-        ? 620
-        : width.value >= 1200
-            ? 520
-            : width.value * twoPercent;
-    return boxWidth;
-  }
+ 
 
   double get onePercentWidth {
     const double onePercent = 0.1;

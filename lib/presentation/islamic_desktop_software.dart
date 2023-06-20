@@ -9,8 +9,6 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 
 class IslamicDesktopSoftware extends StatelessWidget {
   const IslamicDesktopSoftware({super.key});
-  
-
 
   @override
   Widget build(BuildContext context) {

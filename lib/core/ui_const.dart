@@ -39,8 +39,9 @@ class TextUtils {
   }
 
   static TextStyle bodySubtitleText(
-      {Color? color, double? fontSize, String? fontFamily}) {
+      {Color? color, double? fontSize, String? fontFamily, double? height}) {
     return TextStyle(
+      height: height ?? 2.5,
       fontFamily: fontFamily ?? FontFamily.roboto,
       fontWeight: FontWeight.w400,
       color: color ?? DesktopAppColors.subTitleColor,
@@ -75,126 +76,25 @@ class TextUtils {
     );
   }
 
-  static TextStyle bodyMediumText(
-      {double? fontSizeMobile, double? fontSizeTab, Color? color}) {
-    return TextStyle(
-      fontFamily: FontFamily.poppins,
-      fontWeight: FontWeight.w600,
-      color: color ??
-          (Get.isDarkMode
-              ? DesktopAppColors.darkTitleColor
-              : DesktopAppColors.titleColor),
-      fontSize: DesktopScreen.isMobile
-          ? fontSizeMobile ?? 12.px
-          : fontSizeTab ?? 22.px,
-    );
-  }
-
-  static TextStyle subtitle({Color? color, double? height}) {
-    return TextStyle(
-      fontFamily: FontFamily.roboto,
-      fontWeight: FontWeight.w400,
-      height: height ?? 0,
-      color: color ??
-          (Get.isDarkMode
-              ? DesktopAppColors.darkSubTitleColor
-              : DesktopAppColors.subTitleColor),
-      fontSize: DesktopScreen.isMobile ? 12.px : 20.px,
-    );
-  }
-
-  static TextStyle displayLargeText({Color? color}) {
-    return TextStyle(
-      fontFamily: FontFamily.poppins,
-      fontWeight: FontWeight.w700,
-      color: color ??
-          (Get.isDarkMode
-              ? DesktopAppColors.darkTitleColor
-              : DesktopAppColors.titleColor),
-      fontSize: DesktopScreen.isMobile ? 18.px : 36.px,
-    );
-  }
-
-  static TextStyle headLineText({Color? color}) {
-    return TextStyle(
-      fontFamily: FontFamily.poppins,
-      fontWeight: FontWeight.w600,
-      color: color ??
-          (Get.isDarkMode
-              ? DesktopAppColors.darkTitleColor
-              : DesktopAppColors.headLineColor),
-      fontSize: DesktopScreen.isMobile ? 18.px : 36.px,
-    );
-  }
-
-  static TextStyle subtitleMediumText(
-      {Color? color, double? height, FontWeight? fontWeight}) {
-    return TextStyle(
-      fontFamily: FontFamily.roboto,
-      fontWeight: fontWeight ?? FontWeight.w400,
-      height: height ?? 1.8,
-      color: color ??
-          (Get.isDarkMode
-              ? DesktopAppColors.darkTitleColor
-              : DesktopAppColors.titleColor),
-      fontSize: DesktopScreen.isMobile ? 14.px : 22.px,
-    );
-  }
-
-  static TextStyle subtitleText({Color? color}) {
-    return TextStyle(
-      fontFamily: FontFamily.roboto,
-      fontWeight: FontWeight.w400,
-      height: 1.3,
-      color: color ??
-          (Get.isDarkMode
-              ? DesktopAppColors.darkTitleColor
-              : DesktopAppColors.titleColor),
-      fontSize: DesktopScreen.isMobile ? 14.px : 22.px,
-    );
-  }
+  // static TextStyle subtitle({Color? color, double? height}) {
+  //   return TextStyle(
+  //     fontFamily: FontFamily.roboto,
+  //     fontWeight: FontWeight.w400,
+  //     height: height ?? 0,
+  //     color: color ??
+  //         (Get.isDarkMode
+  //             ? DesktopAppColors.darkSubTitleColor
+  //             : DesktopAppColors.subTitleColor),
+  //     fontSize: DesktopScreen.isMobile ? 12.px : 20.px,
+  //   );
+  // }
 
   static TextStyle bodySmallText() {
     return TextStyle(
       fontFamily: FontFamily.poppins,
       fontWeight: FontWeight.w600,
       color: DesktopAppColors.primaryColor,
-      fontSize: DesktopScreen.isMobile ? 10.px : 18.px,
-    );
-  }
-
-  static TextStyle titleSmallText({double? fontSize, Color? color}) {
-    return TextStyle(
-      fontFamily: FontFamily.poppins,
-      fontWeight: FontWeight.w400,
-      height: 1.8,
-      color: color ??
-          (Get.isDarkMode
-              ? DesktopAppColors.darkSubTitleColor
-              : DesktopAppColors.subTitleColor),
-      fontSize: DesktopScreen.isMobile ? fontSize ?? 12.px : 25.px,
-    );
-  }
-
-  static TextStyle topBarWhiteText({Color? color}) {
-    return TextStyle(
-      fontFamily: FontFamily.poppins,
-      fontWeight: FontWeight.w700,
-      color: color ?? DesktopAppColors.whiteColor,
-      fontSize: DesktopScreen.isMobile ? 20.px : 34.px,
-    );
-  }
-
-  static TextStyle smallText(
-      {Color? color, double? height, TextDecoration? decoration}) {
-    return TextStyle(
-      wordSpacing: 2,
-      height: height ?? 1.3,
-      fontFamily: FontFamily.roboto,
-      decoration: decoration ?? TextDecoration.none,
-      fontWeight: FontWeight.w400,
-      color: color ?? DesktopAppColors.whiteColor,
-      fontSize: DesktopScreen.isMobile ? 12.px : 20.px,
+      fontSize: 18.px,
     );
   }
 }
@@ -317,8 +217,8 @@ final gapH6 = SizedBox(height: DesktopScreen.isMobile ? 6.px : 10.px);
 final gapH8 = SizedBox(height: DesktopScreen.isMobile ? 8.px : 10.px);
 final gapH10 = SizedBox(height: 10.px);
 final gapH12 = SizedBox(height: 12.px);
-final gapH14 = SizedBox(height: DesktopScreen.isMobile ? 14.px : 24.px);
-final gapH16 = SizedBox(height: DesktopScreen.isMobile ? 16.px : 26.px);
+final gapH14 = SizedBox(height: 24.px);
+final gapH16 = SizedBox(height: 16.px);
 final gapH18 = SizedBox(height: 18.px);
 final gapH20 = SizedBox(height: 20.px);
 final gapH22 = SizedBox(height: 22.px);
@@ -350,7 +250,7 @@ final gapH40 = SizedBox(height: DesktopScreen.isMobile ? 40.px : 50.px);
 ///
 ////////////const padding///////////////
 
-final double kPadding2 = DesktopScreen.isMobile ? 2.px : 4.px;
+final double kPadding2 = 2.px;
 final double kPadding4 = DesktopScreen.isMobile ? 4.px : 8.px;
 final double kPadding6 = DesktopScreen.isMobile ? 6.px : 12.px;
 final double kPadding8 = DesktopScreen.isMobile ? 8.px : 12.px;
@@ -370,12 +270,11 @@ final double kPadding26 = DesktopScreen.isMobile ? 26.px : 36.px;
 
 final double kRadius2 = DesktopScreen.isMobile ? 2.px : 4;
 final double kRadius4 = DesktopScreen.isMobile ? 4.px : 6;
-final double kRadius6 = DesktopScreen.isMobile ? 6.px : 8;
+final double kRadius6 = 6.px;
 final BorderRadiusGeometry radius4 =
     BorderRadius.circular(DesktopScreen.isMobile ? 4.px : 10.px);
-final BorderRadiusGeometry radius6 =
-    BorderRadius.circular(DesktopScreen.isMobile ? 6.px : 14.px);
-final double kRadius8 = DesktopScreen.isMobile ? 8.px : 16.px;
+final BorderRadiusGeometry radius6 = BorderRadius.circular(6.px);
+final double kRadius8 = 8.px;
 final double kRadius10 = 10.px;
 final double kRadius12 = 12.px;
 final double kRadius14 = 14.px;
