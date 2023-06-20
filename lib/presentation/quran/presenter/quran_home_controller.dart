@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 class QuranHomeController extends GetxController {
   final RxDouble width = 0.0.obs;
   final RxDouble height = 0.0.obs;
+  RxInt quranTabCurrentIndex = 0.obs;
+  RxInt settingTabCurrentIndex = 0.obs;
 
   void observeScreenSize() {
     FlutterView window = Get.window;
@@ -22,8 +24,6 @@ class QuranHomeController extends GetxController {
         width.value >= 1600 ? 320 : (width.value * twoPercent);
     return boxWidth;
   }
-
- 
 
   double get onePercentWidth {
     const double onePercent = 0.1;

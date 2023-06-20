@@ -5,4 +5,5 @@ class FontFamily {
   static const String roboto = 'Roboto';
   static const String meQuran = 'me_quran';
   static const String surahNames = 'SurahName';
+  static const String kfgqpc = 'kfgqpc';
 }

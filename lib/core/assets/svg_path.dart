@@ -14,4 +14,12 @@ class SvgPath {
   static const String icProfileImage = 'assets/images/ptofile_image.png';
   static const String imgMakka = 'assets/images/makka.png';
   static const String imgPlayButton = 'assets/images/play_button.png';
+  static const String icBookmark = 'assets/icons/ic_bookmark.svg';
+  static const String icDotMenu = 'assets/icons/ic_dot_menu.svg';
+  static const String icPlay = 'assets/icons/ic_play.svg';
+  static const String icShare = 'assets/icons/ic_share.svg';
+  static const String icArrowRight = 'assets/icons/ic_arrow_right.svg';
+  static const String icRight = 'assets/icons/ic_right.svg';
+  static const String icFile = 'assets/icons/file_icon.svg';
+  static const String icT = 'assets/icons/ic_T.svg';
 }
